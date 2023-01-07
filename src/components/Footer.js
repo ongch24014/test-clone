@@ -6,7 +6,7 @@ export default function Footer() {
     <footer>
       <section>
         <img src={footerLogo} alt="footer logo" className="footer-img" />
-        <section>
+        <section className="doormat">
           <h3>Doormat Navigation</h3>
           <ul>
             <li><a href="/">Home</a></li>
@@ -18,13 +18,13 @@ export default function Footer() {
           </ul>
         </section>
 
-        <section>
+        <section className="footer-contact">
           <h3>Contact</h3>
           <p>Address</p>
           <p>Number</p>
         </section>
 
-        <section>
+        <section className="footer-social">
           <h3>Social Media Links</h3>
           <p>Facebook</p>
           <p>Twitter</p>
