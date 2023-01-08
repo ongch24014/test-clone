@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   useEffect(() => {
@@ -28,12 +29,12 @@ export default function Nav() {
       <Header />
       <nav>
         <ul id="primary-navigation" className="navigation" data-visible="false">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/menu">Menu</a></li>
-          <li><a href="/reservation">Reservations</a></li>
-          <li><a href="/contact">Contact Me</a></li>
-          <li><a href="/login">Login</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/menu">Menu</Link></li>
+          <li><Link to="/reservation">Reservations</Link></li>
+          <li><Link to="/contact">Contact Me</Link></li>
+          <li><Link to="/login">Login</Link></li>
         </ul>
       </nav>
       <button className="hamburger" aria-controls="primary-navigation" aria-expanded="false"></button>
