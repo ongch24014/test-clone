@@ -1,14 +1,12 @@
 import React from 'react';
-import Footer from './Footer';
-import Main from './Main';
-import Nav from './Nav';
+import Chicago from './Chicago';
+import Specials from './Specials';
 
 function Homepage() {
   return (
     <>
-      <Nav />
-      <Main />
-      <Footer />
+      <Chicago />
+      <Specials />
     </>
   )
 }
