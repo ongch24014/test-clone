@@ -7,25 +7,23 @@
   text-align: center;
 }
 
-Nav, Main, Footer {
-  padding: 10px 0;
-}
-
 Footer {
   background-color: antiquewhite;
 }
 
-.navigation {
+.nav-section {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
+  padding: 10px 0;
 }
 
-.navigation > ul {
+.navigation {
   display: flex;
   gap: 20px;
   list-style: none;
+  margin: 0;
 }
 
 .navigation a, .navigation a:visited {
@@ -33,6 +31,53 @@ Footer {
   color: black;
 }
 
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 35em) {
+  /* navigation */
+  .nav-section {
+    justify-content: start;
+    margin-left: 30px;
+  }
+
+  .navigation {
+    position: fixed;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    z-index: 2;
+    padding: min(30vh, 10rem) 2em;
+    background-color: hsl(0deg 0% 100% / 50%);
+    backdrop-filter: blur(1rem);
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
+
+  .navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    outline: none;
+    border: none;
+    right: 2rem;
+    z-index: 9999;
+    background: url('images/hamburger_icon.svg');
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .hamburger[aria-expanded="true"] {
+    background-image: url('images/close.svg');;
+  }
+}
+
+/* main */
 main {
   display: flex;
   flex-direction: column;
@@ -43,7 +88,6 @@ main {
 
 main > section > article {
   position: relative;
-  /* width: 650px; */
   font-family: serif;
 }
 
@@ -53,10 +97,11 @@ main > section > article {
   grid-template-columns: repeat(12, 1fr);
   width: 100%;
   padding: 10px 0;
+  position: relative;
 }
 
 .intro-article {
-  grid-column: 3 / 11;
+  grid-column: 3 / 7;
 }
 
 .intro-article > h1 {
@@ -71,19 +116,19 @@ main > section > article {
 }
 
 .intro-article > p {
-  width: 200px;
   color: white;
   font-family: sans-serif;
 }
 
-.intro-article > img {
+.intro > img {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 25%;
+  top: 5px;
   width: 300px;
   height: 300px;
   object-fit: cover;
   border-radius: 20px;
+  transition: 0.2s;
 }
 
 .reserve-btn {
@@ -95,6 +140,34 @@ main > section > article {
   font-weight: 600;
   cursor: pointer;
 }
+
+@media (max-width: 1100px) {
+  .intro > img {
+    width: 250px;
+    height: 250px;
+    right: 15%;
+  }
+}
+
+@media (max-width: 700px) {
+  .intro > img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 35em) {
+  .intro > img {
+    grid-column: 8 / 12;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: relative;
+  }
+}
+
+/* footer */
 
 footer > section {
   position: relative;

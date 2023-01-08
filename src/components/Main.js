@@ -10,8 +10,8 @@ export default function Main() {
           <h2>Chicago</h2>
           <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
           <button className="reserve-btn">Reserve a Table</button>
-          <img src={restaurantfood} alt="restaurant food" />
         </article>
+        <img src={restaurantfood} alt="restaurant food" />
       </section>
     </main>
   )
